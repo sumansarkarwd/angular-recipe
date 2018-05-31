@@ -1,0 +1,17 @@
+<app-shopping-edit (newIngredient)="onIngredientAdd($event)"></app-shopping-edit>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <ul class="list-group">
+        <a style="cursor: pointer;"
+        class="list-group-item" 
+        *ngFor="let list of ingredients; let i = index"
+        (click)="onIngredientEdit(i)">
+          {{list.name}}
+          <span class="badge">{{list.amount}}</span>
+        </a>
+      </ul>
+    </div>
+  </div>
+</div>

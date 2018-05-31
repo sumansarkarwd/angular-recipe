@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+.btn{
+    margin-right: 15px;
+}
+.ingredientsFormItems{
+    margin-bottom: 10px;
+}
