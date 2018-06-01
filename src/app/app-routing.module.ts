@@ -6,6 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthGaurdService } from './auth/auth-gaurd.service';
 
 const appRoutes: Routes = [
     {
@@ -18,14 +21,22 @@ const appRoutes: Routes = [
         component: RecipesComponent,
         children: [
             { path: '', component: RecipeStartComponent },
-            { path: 'new', component: RecipeEditComponent },
+            { path: 'new', component: RecipeEditComponent, canActivate: [AuthGaurdService] },
             { path: ':id', component: RecipeDetailComponent },
-            { path: ':id/edit', component: RecipeEditComponent }
+            { path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGaurdService] }
         ]
     },
     {
         path: 'shopping-list',
         component: ShoppingListComponent
+    },
+    {
+        path: 'signup',
+        component: SignupComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     }
 ];
 

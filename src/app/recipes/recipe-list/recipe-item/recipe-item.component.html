@@ -6,7 +6,7 @@ routerLinkActive="active">
     <div class="col-sm-12">
       <div class="pull-left">
         <p><strong>{{recipe.name}}</strong></p>
-        <em>{{recipe.description}}</em>
+        <em>{{ recipe.description | shorten: 30 }}</em>
       </div>
       <div class="pull-right">
         <img src="{{recipe.photo}}" alt="{{recipe.name}}" class="img-respinsive" style="max-width: 50px;">

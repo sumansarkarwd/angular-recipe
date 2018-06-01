@@ -9,3 +9,23 @@ body{
 .ingredientsFormItems{
     margin-bottom: 10px;
 }
+
+.notification{
+    position: fixed;
+    z-index: 10000;
+    top: 50px;
+    animation: notification .3s ease-in-out;
+    animation-fill-mode: forwards;
+    display: none;
+}
+@keyframes notification {
+    from {
+        top: 0;
+    }
+    to {
+        top: 50px;
+    }
+}
+.notification.show{
+    display: block;
+}
